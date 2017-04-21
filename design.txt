@@ -1,0 +1,21 @@
+message structure:
+system command args
+
+conf file structure:
+{
+  "plugins": {
+    "system": "systemhandler",
+    "torrent": "torrenthandler",
+    "file": "filehandler"
+  }
+}
+
+modules list:
+TelegramAdmin
+CommandManager
+DefaultHandler
+CommandHandler
+TorrentHandler
+SystemHandler
+config.py
+

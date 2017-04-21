@@ -1,0 +1,9 @@
+{
+  "token": "TOKENHERE",
+  "plugins": {
+    "default": "defaulthandler.DefaultHandler",
+    "system": "systemhandler.SystemHandler",
+    "torrent": "torrenthandler.TorrentHandler",
+    "file": "filehandler.FileHandler"
+  }
+}
