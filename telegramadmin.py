@@ -44,7 +44,15 @@ class TelegramAdmin:
     TOKEN = self.config_data['token']
 
     self.bot = telepot.Bot(TOKEN)
- #   self.bot.sendMessage(self.config_data['uid'],"Ok, sono online!")
+    success = False
+    while not success:
+      success = True
+      try:
+        self.bot.sendMessage(self.config_data['uid'],"Ok, sono online!")
+      except:
+        success = False
+        self.log.error('Impossible to send message... retry in 10 seconds')
+        time.sleep(10)
 
     self.command_manager = \
         commandmanager.CommandManager(self.bot, self.config_data)
