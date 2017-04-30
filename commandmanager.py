@@ -14,12 +14,12 @@ class CommandManager():
 
   def load_handlers(self):
     plugins_to_import = self.config_data['plugins']
-    
+
     plugins_objects = [getattr(importlib.import_module(mod),cls)(self.config_data, self.bot)
-                for (mod,cls) in (plugin.split('.') 
+                for (mod,cls) in (plugin.split('.')
                   for plugin in plugins_to_import.values())]
     self.handlers = dict(zip(plugins_to_import.keys(),plugins_objects))
-  
+
   def parse_command_message(self, command_text):
     parsed_command = {}
     parsed_command['type'] = ''
@@ -49,7 +49,7 @@ class CommandManager():
       self.log.error(e)
       self.bot.sendMessage(cid, sorry_message)
       return
-    
-    command_handler.handle_message(cid, 
+
+    command_handler.handle_message(cid,
                              parsed_command['name'],
                              parsed_command['args'])

@@ -4,7 +4,7 @@ import transmissionrpc
 import os
 
 class TorrentHandler(abstracthandler.AbstractHandler):
-  
+
   def __init__(self, conf, bot):
     abstracthandler.AbstractHandler.__init__(self, 'torrent', conf, bot)
     self.log = logging.getLogger(__name__)
@@ -43,7 +43,7 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     message = '%s\n' % message
     self.send_formatted_message(cid, message)
 
-  def get_torrent_info(self, cid, args): 
+  def get_torrent_info(self, cid, args):
     if not self.tc:
       self.connect()
     if len(args) >= 1:
@@ -53,8 +53,8 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     else:
       self.send_formatted_message(cid,
                                   '*torrent list* usage: torrent list _[TORRENT NUMBER]_...')
- 
-  def remove_torrent(self, cid, args): 
+
+  def remove_torrent(self, cid, args):
     if not self.tc:
       self.connect()
 
@@ -71,7 +71,7 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     result = result % torrent
     return result
 
-  def start_torrent(self, cid, args): 
+  def start_torrent(self, cid, args):
     if not self.tc:
       self.connect()
 
@@ -89,7 +89,7 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     result = result % torrent
     return result
 
-  def stop_torrent(self, cid, args): 
+  def stop_torrent(self, cid, args):
     if not self.tc:
       self.connect()
 
@@ -107,7 +107,7 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     result = result % torrent
     return result
 
-  def add_torrent(self, cid, args): 
+  def add_torrent(self, cid, args):
     if not self.tc:
       self.connect()
 
@@ -131,14 +131,14 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     result = result % (t.id,t.name,t.status,int(t.progress))
     return result
 
-  def start_all(self,cid,args): 
+  def start_all(self,cid,args):
     if not self.tc:
       self.connect()
 
     self.tc.start_all();
     self.send_formatted_message(cid,'Started *all* torrents')
 
-  def stop_all(self,cid,args): 
+  def stop_all(self,cid,args):
     if not self.tc:
       self.connect()
 

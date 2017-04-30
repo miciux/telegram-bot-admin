@@ -3,7 +3,7 @@ import emoji
 class AbstractHandler():
   def __init__(self,
                name,
-               conf, 
+               conf,
                bot):
     self.name = name
     self.config_data = conf
@@ -14,7 +14,7 @@ class AbstractHandler():
     raise NotImplementedError
 
   def handle_callback_query(self, qid, query_data):
-    raise NotImplementedError    
+    raise NotImplementedError
 
   def get_sorry_message(self):
     command_list = '\n'.join(self.commands.keys())

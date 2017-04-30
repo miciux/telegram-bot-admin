@@ -3,7 +3,7 @@ import abstracthandler
 import os
 
 class SystemHandler(abstracthandler.AbstractHandler):
-  
+
   def __init__(self, conf, bot):
     abstracthandler.AbstractHandler.__init__(self, 'system', conf, bot)
     self.log = logging.getLogger(__name__)
@@ -31,7 +31,7 @@ class SystemHandler(abstracthandler.AbstractHandler):
 
   def get_uptime(self, cid, args):
     self.execute_command(cid, 'uptime')
- 
+
   def get_pstree(self, cid, args):
     self.execute_command(cid, 'pstree')
 

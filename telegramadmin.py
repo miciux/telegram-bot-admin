@@ -32,7 +32,7 @@ class TelegramAdmin:
     if content_type == 'text':
       self.log.info('message received %s' % msg['text'])
       self.command_manager.execute_command_message(chat_id, msg['text'])
-  
+
   def on_callback_query(self, msg):
     query_id, from_id, query_data = telepot.glance(msg,
                                                    flavour='callback_query')
@@ -53,7 +53,7 @@ class TelegramAdmin:
     except Exception as e:
       self.log.error(e)
       print 'Error importing modules, see logfiles for more infos'
-      exit()   
+      exit()
 
 if __name__ == "__main__":
   server = TelegramAdmin()

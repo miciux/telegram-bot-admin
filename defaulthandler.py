@@ -3,7 +3,7 @@ import abstracthandler
 import datetime
 
 class DefaultHandler(abstracthandler.AbstractHandler):
-  
+
   def __init__(self, conf, bot):
     abstracthandler.AbstractHandler.__init__(self, 'default', conf, bot)
     self.log = logging.getLogger(__name__)

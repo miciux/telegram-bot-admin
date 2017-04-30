@@ -3,7 +3,7 @@ import abstracthandler
 import os
 
 class FileHandler(abstracthandler.AbstractHandler):
-  
+
   def __init__(self, conf, bot):
     abstracthandler.AbstractHandler.__init__(self, 'file', conf, bot)
     self.log = logging.getLogger(__name__)
