@@ -21,7 +21,7 @@ class TorrentHandler(abstracthandler.AbstractHandler):
     self.commands['reload'] = self.reload
 
   def reload(self, cid, args):
-    os.system('service transmission-daemon reload')
+    os.system('sudo service transmission-daemon reload')
 
   def connect(self):
     self.tc = transmissionrpc.Client('localhost', port=9091)

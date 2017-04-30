@@ -11,6 +11,8 @@ class SystemHandler(abstracthandler.AbstractHandler):
     self.commands['cputemp'] = self.get_cpu_temp
     self.commands['uptime'] = self.get_uptime
     self.commands['pstree'] = self.get_pstree
+    self.commands['reboot'] = self.reboot
+
 
   def handle_message(self,cid, command, args):
     try:
@@ -32,3 +34,7 @@ class SystemHandler(abstracthandler.AbstractHandler):
  
   def get_pstree(self, cid, args):
     self.execute_command(cid, 'pstree')
+
+  def reboot(self, cid, args):
+    self.execute_command(cid, 'sudo reboot')
+

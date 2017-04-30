@@ -1,5 +1,5 @@
 {
-  "token": "TOKENHERE",
+  "token": "357290636:AAEa9z0w52W8eMFcot7zNaE7kk0XPEYwLaU",
   "plugins": {
     "default": "defaulthandler.DefaultHandler",
     "system": "systemhandler.SystemHandler",

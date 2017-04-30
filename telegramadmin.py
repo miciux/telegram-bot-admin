@@ -44,6 +44,8 @@ class TelegramAdmin:
     TOKEN = self.config_data['token']
 
     self.bot = telepot.Bot(TOKEN)
+ #   self.bot.sendMessage(self.config_data['uid'],"Ok, sono online!")
+
     self.command_manager = \
         commandmanager.CommandManager(self.bot, self.config_data)
     try:
