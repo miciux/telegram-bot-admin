@@ -1,9 +1,10 @@
 {
-  "token": "357290636:AAEa9z0w52W8eMFcot7zNaE7kk0XPEYwLaU",
+  "uid": "UID",
+  "token": "TOKEN",
   "plugins": {
     "default": "defaulthandler.DefaultHandler",
+    "file": "filehandler.FileHandler",
     "system": "systemhandler.SystemHandler",
-    "torrent": "torrenthandler.TorrentHandler",
-    "file": "filehandler.FileHandler"
+    "torrent": "torrenthandler.TorrentHandler"
   }
 }
