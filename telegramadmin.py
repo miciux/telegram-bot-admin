@@ -48,7 +48,7 @@ class TelegramAdmin:
         while not success:
             success = True
             try:
-                self.bot.sendMessage(self.config_data['uid'],"Ok, sono online!")
+                self.bot.sendMessage(self.config_data['uid'],'Ok, sono online!')
             except:
                 success = False
                 self.log.error('Impossible to send message... retry in 10 seconds')
